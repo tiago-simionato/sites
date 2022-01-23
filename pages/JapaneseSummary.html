@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Resumo de Japones</title>
+	<style>
+		/*Paleta Complementar 1
+		#FA6341
+		#FF7A5C
+		#AD361C
+		#55AD8D
+		#B1FAE0
+		*/
+
+		/*Paleta Complementar 2
+		#99EDFA
+		#B5F5FF
+		#58A2AD
+		#FAEBDE
+		#B09680
+		*/
+
+		@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+		@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+		:root {
+			--maincor: #99EDFA;
+			--cor2: #B5F5FF;
+			--cor3: #58A2AD;
+			--complementar1: #FAEBDE;
+			--complementar2: #B09680;
+			--complementar3: #877A73;
+
+			--destaque: 'Oswald', sans-serif;
+			--dstq2: 'Roboto Condensed', sans-serif;
+		}
+
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			background-color: var(--maincor);
+		}
+
+		header {
+			text-align: center;
+			width: fit-content;
+			margin: auto;
+			padding: 5px 50px;
+			background-color: var(--complementar1);
+			border: 1px solid black;
+		}
+
+		header h1 {
+			/*color: var(--complementar3);*/
+			font-family: var(--destaque);
+			margin: 0%;
+		}
+
+		#indice a {
+			color: var(--complementar3);
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		#indice a:visited {
+			color: var(--complementar3);
+		}
+
+		#indice a:hover {
+			color: var(--complementar2);
+		}
+
+		.topic {
+			border: 1px solid black;
+			margin: 20px auto;
+			background-color: white;
+			max-width: 900px;
+			min-width: 300px;
+			width: 83%;
+			box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.253);
+			border-radius: 0px 0px 5px 5px;
+		}
+
+		.topic-banner {
+			background-color: var(--cor3);
+			height: 40px;
+			margin: 0px;
+		}
+
+		.topic-content {
+			padding: 20px;
+		}
+
+		.topic h1 {
+			text-indent: 2em;
+			font-family: var(--destaque);
+			margin-top: 0px;
+		}
+
+		.topic h2 {
+			text-indent: 1.5em;
+			font-family: var(--destaque);
+		}
+
+		.example {
+			margin: 2em;
+			padding: 20px;
+			/*background-color: var(--cor2);*/
+			background-image: linear-gradient(90deg, var(--cor2), var(--maincor));
+			box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.253);
+			border-radius: 0px 10px;
+			font-size: 1.3em;
+		}
+
+		.example h3 {
+			font-family: var(--destaque);
+			margin-top: 0%;
+		}
+
+		.example ul {
+			margin-bottom: 0%;
+		}
+
+		.example ul.first {
+			margin-top: 0px;
+		}
+
+		.att {
+			margin: 2em;
+			padding: 20px;
+			/*background-color: var(--cor2);*/
+			background-image: linear-gradient(90deg, var(--cor2), var(--maincor));
+			text-align: center;
+			box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.253);
+			border-radius: 20px;
+		}
+
+		.att h3 {
+			margin-top: 0%;
+		}
+
+		.att p {
+			margin-bottom: 0%;
+		}
+
+		p {
+			text-align: justify;
+			text-indent: 2em;
+			line-height: 1.5em;
+		}
+
+		aside {
+			border: 1px solid black;
+			padding: 5px;
+		}
+		
+		ul {
+			list-style-position: inside;
+			/*list-style-type: '\2192';*/
+		}
+
+		li {
+			max-width: fit-content;
+			line-height: 2em;
+		}
+
+		li:hover {
+			text-decoration: underline;
+		}
+
+		li span {
+			display: none;
+		}
+
+		li:hover span {
+			display: inline;
+		}
+
+		.kana {
+			margin-left: 10px;
+		}
+
+		.kana::before {
+			content: '(';
+		}
+
+		.kana::after {
+			content: ')';
+		}
+
+		.traducao {
+			margin-left: 10px;
+		}
+
+		.traducao::before {
+			content: '[';
+		}
+
+		.traducao::after {
+			content: ']';
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>RESUMO DE JAPONÊS</h1>
+	</header>
+	<div class="topic">
+		<div class="topic-banner"></div>
+		<div class="topic-content" id="indice">
+			<h1>Indice</h1>
+			<ul>
+				<li><a href="#adjetivos">Adjetivos</a></li>
+				<ul>
+					<li><a href="#adjetivos">O que são adjetivos い e な</a></li>
+					<li><a href="#adjneg">Forma Negativa</a></li>
+					<li><a href="#adjpast">Adjetivos no Passado</a></li>
+					<li><a href="#adjadd">Junção de Adjetivos</a></li>
+				</ul>
+				<li><a href="#particulas">Partículas</a></li>
+				<ul>
+					<li><a href="#partは">Partícula は</a></li>
+					<li><a href="#partが">Partícula が</a></li>
+					<li><a href="#partに">Partícula に</a></li>
+					<li><a href="#partへ">Partícula へ</a></li>
+					<li><a href="#partを">Partícula を</a></li>
+					<li><a href="#partで">Partícula で</a></li>
+					<li><a href="#partも">Partícula も</a></li>
+					<li><a href="#partの">Partícula の</a></li>
+					<li><a href="#partと">Partícula と</a></li>
+					<li><a href="#partから">Partícula から</a></li>
+					<li><a href="#partまで">Partícula まで</a></li>
+				</ul>
+				<li><a href="#verbos">Verbos</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="topic">
+		<div class="topic-banner"></div>
+		<div class="topic-content" id="adjetivos">
+
+			<h1>Adjetivos</h1>
+			<h2>Adjetivos い</h2>
+			<p>Adjetivos い são aqueles terminados com い e na escrita do kanji o い não faz parte do kanji.</p>
+			<aside class="example">
+				<h3>Exemplos</h3>
+				<ul>
+					<li>古い <span class="kana">ふるい</span> <span class="traducao">Velho</span></li>
+					<li>長い <span class="kana">ながい</span> <span class="traducao">Longo</span></li>
+					<li>高い <span class="kana">たかい</span> <span class="traducao">Alto / Caro</span></li>
+				</ul>
+			</aside>
+			<p>Quando vamos ligar o adjetivo い ao substantivo, o adjetivo não é alterado, ou seja:</p>
+			<ul>
+				<li>古い車 <span class="kana">ふるいくるま</span> <span class="traducao">Carro velho</span></li>
+				<li>長い本 <span class="kana">ながいほん</span> <span class="traducao">Livro longo</span></li>
+				<li>高い建物 <span class="kana">たかいたてもの</span> <span class="traducao">Prédio alto</span></li>
+			</ul>
+		
+			<h2>Adjetivos な</h2>
+			<p>Adjetivos な são todos aqueles que não são い, ou seja, não terminam em い.</p>
+			<aside class="example">
+				<h3>Exemplos</h3>
+				<ul>
+					<li>静か <span class="kana">しずか</span> <span class="traducao">Silencioso, não faz barulho</span></li>
+					<li>賑やか <span class="kana">にぎやか</span> <span class="traducao">Movimentado, Animado</span></li>
+					<li>丈夫 <span class="kana">じょうぶ</span> <span class="traducao">Resistente, Durável</span></li>
+				</ul>
+			</aside>
+			<p>Entretanto, existem algumas exceções:</p>
+			<ul>
+				<li>有名 <span class="kana">ゆうめい</span> <span class="traducao">Famoso</span></li>
+				<li>綺麗 <span class="kana">きれい</span> <span class="traducao">Bonito</span></li>
+			</ul>
+			<p>Apesar de terminarem com som de い, o い faz parte do kanji, por isso são considerados adjetivos な.</p>
+		
+			<p>Quando vamos ligar os adjetivos な aos substantivos, colocamos な depois deles, daí o nome que recebem.</p>
+			<ul>
+				<li>綺麗な町 <span class="kana">きれいなまち</span> <span class="traducao">Cidade bonita</span></li>
+				<li>有名な人 <span class="kana">ゆうめいひと</span> <span class="traducao">Pessoa famosa</span></li>
+			</ul>
+
+			<h1 id="adjneg">Forma Negativa</h1>
+			<h2>Adjetivos い</h2>
+			<p>Para colocar adjetivos い na forma negativa, basta tirar o  hiragana い do final e adicionar <em>くない</em> para forma <strong>informal</strong> e <em>くありません</em> para forma <strong>formal</strong>.</p>
+			<aside class="example">
+				<h3>Exemplos</h3>
+				<ul class="first">
+					<li>古くない <span class="kana">ふるくない</span> <span class="traducao">Nao é velho</span></li>
+					<li>古くありません <span class="kana">ふるくありません</span> <span class="traducao">Não é velho</span></li>
+				</ul>
+				<ul>
+					<li>長くない<span class="kana">ながくない</span> <span class="traducao">Não é longo</span></li>
+					<li>長くありません <span class="kana">ながくありません</span> <span class="traducao">Não é longo</span></li>
+				</ul>
+				<ul>
+					<li>高くない <span class="kana">たかくない</span> <span class="traducao">Não é alto / Não é caro</span></li>
+					<li>高くありません <span class="kana">たかくありません</span> <span class="traducao">Não é alto / Não é caro</span></li>
+				</ul>
+			</aside>
+			<h2>Adjetivos な</h2>
+			<p>Para colocar adjetivos な na forma negativa, basta adiconar じゃない no final para forma <strong>informal</strong> e じゃありません  para forma <strong>formal</strong>.</p>
+			<aside class="example">
+				<h3>Exemplos</h3>
+				<ul class="first">
+					<li>静かじゃない <span class="kana">しずかじゃない</span> <span class="traducao">Nao é silencioso</span></li>
+					<li>静かじゃありません <span class="kana">しずかじゃありません</span> <span class="traducao">Não é silencioso</span></li>
+				</ul>
+				<ul>
+					<li>賑やかじゃない <span class="kana">にぎやかじゃない</span> <span class="traducao">Não é movimentado, Não é animado</span></li>
+					<li>賑やかじゃありません <span class="kana">にぎやかじゃありません</span> <span class="traducao">Não é movimentado, Não é animado</span></li>
+				</ul>
+				<ul>
+					<li>丈夫じゃない <span class="kana">じょうぶじゃない</span> <span class="traducao">Não é Resistente</span></li>
+					<li>丈夫じゃありません <span class="kana">じょうぶじゃありません</span> <span class="traducao">Não é Resistente</span></li>
+				</ul>
+			</aside>
+
+			<h1 id="adjpast">Adjetivos no Passado</h1>
+			<h2>Adjetivos い</h2>
+			<p>Para colocar adjetivos い no passado, bastar remover o い do final e adicionar かった</p>
+			<aside class="example">
+				<h3>Exemplos</h3>
+				<ul>
+					<li>お昼ご飯はおいしかったです <span class="kana">おひるごはんはおいしかったです</span> <span class="traducao">O almoço estava delicioso</span></li>
+				</ul>
+			</aside>
+			<p>Em uma fala <strong>informal</strong> basta retirar o です do final.</p>
+
+			<h1 id="adjadd">Junção de Adjetivos</h1>
+			<h2>Adjetivos い</h2>
+			<p>Se o adjetivo que vier antes for um adjetivo い, basta tirar o い e adicionar くて.</p>
+			<aside class="example">
+				<h3>Exemplos</h3>
+				<ul>
+					<li>その車は高くて古いです <span class="kana">そのくるまはたかくてふるいです</span> <span class="traducao">Aquele carro é caro e velho</span></li>
+					<li>私の新しいゲームは易しくて楽しいです <span class="kana">わたしのあたらしいゲームはやさしくてたのしいです</span> <span class="traducao">Meu jogo novo é fácil e divertido</span></li>
+				</ul>
+			</aside>
+			<aside class="att">
+				<h3 >Atenção!</h3>
+				<p>いい é uma <strong>excessão</strong>. Ele se torna よくて.</p>
+			</aside>
+			<h2>Adjetivos な</h2>
+			<p>Se o adjetivo que vier antes for um adjetivo な, basta acrescentar で no final dele.</p>
+			<aside class="example">
+				<h3>Exemplos</h3>
+				<ul>
+					<li>公園はきれいで静かです <span class="kana">こうえんはきれいでしずかです</span> <span class="traducao">Parques são bonitos e calmos</span></li>
+				</ul>
+			</aside>
+			<p>Podem ser juntados tantos adjetivos quando forem necessários. Nesse caso, todos eles devem estar na mesma forma (positiva ou negativa) e todos exceto o último serão modificados do jeito mencionado acima.</p>
+		</div>
+	</div>
+
+	<div class="topic">
+		<div class="topic-banner"></div>
+		<div class="topic-content" id="particulas">
+			<h1>Partículas <li style="display: inline;">助詞 <span class="kana">じょし</span></li> </h1>
+			<h2 id="partは">Partícula は</h2>
+			<p> A partícula は é usada para introduzir uma informação nova a um sujeito já conhecido pelo contexto.</p>
+			<ul>
+				<li>私はチアゴです <span class="traducao">Eu sou Tiago</span></li>
+			</ul>
+			<p>Nesse caso está claro pelo contexto que o assunto sou eu e estou introduzindo uma informação nova sobre mim, que é meu nome.</p>
+			<h2 id="partが">Partícula が</h2>
+			<p>A partícula が é usada de forma similar à partícula は, porém o uso é invertido.</p>
+			<ul>
+				<li>私がチアゴです <span class="traducao">O Tiago sou eu</span></li>
+			</ul>
+			<p>Nesse caso, o contexto deve indicar que existe alguém chamado tiago, mas não se sabe quem. Então posso usar a partícula が para indicar que exatamente é o tiago.</p>
+			<p>Além disso, が tem alguns usos em "Frases prontas"</p>
+			<ul>
+				<li>があります/ がいます <span class="traducao">Verbo existir na forma polida</span></li>
+				<li>が欲しい <span class="traducao">Adjetivo para querer</span></li>
+				<li><em>Forma たい</em>: が食べたい <span class="traducao">Quero comer</span></li>
+				<li><em>Forma potêncial</em>: が話せます <span class="traducao">Consigo falar</span></li>
+				<li>ができます</li>
+				<li>がわかります</li>
+			</ul>
+			<h2 id="partに">Partícula に</h2>
+			<p>Usado para indicar que algo está sendo feito para alguém.</p>
+			<ul>
+				<li>友達にペンをあげます <span>(ともだちにペンをあげます) [Vou dar uma caneta para meu amigo]</span></li>
+			</ul>
+			<p>Também pode ser usado para indicar onde algo está.</p>
+			<ul>
+				<li>手編みは机の上にあります <span class="kana">てがみはつくえのうえにあります</span> <span class="traducao"></span></li>
+			</ul>
+			<p>Também pode ser usado para indicar um destino, quando se vai até ele com algum objetivo.</p>
+			<ul>
+				<li>学校に行きます <span class="kana">がっこうにいきます</span><span class="traducao">Vou para a escola</span></li>
+				<li>飛行機に乗ります <span class="kana">ひこうきにのります</span> <span class="traducao">Eu subo no avião</span></li>
+			</ul>
+			<p>Também pode ser usado para indicar uma mudança.</p>
+			<ul>
+				<li>私は医者になりたいです <span class="kana">わたしはいしゃになりたいです</span> <span class="traducao">Quero me tornar um médico</span></li>
+			</ul>
+			<p>Também pode indicar uma escolha.</p>
+			<ul>
+				<li>これにします <span class="traducao">Vou escolher este</span></li>
+			</ul>
+			<p>Também é usada na voz passiva.</p>
+			<p>Também indica horários e datas</p>
+			<ul>
+				<li>七時に起きます <span class="kana">しちじにおきます</span> <span class="traducao">Eu acordo às 7 horas</span></li>
+				<li>今年の四月二十三日に日本へいきます <span class="kana">ことしのしがつにじゅうさんにちににほんへいきます</span> <span class="traducao">Vou para o Japão este ano no dia 23 de abril</span></li>
+			</ul>
+			<p>Também pode ser usado com adjetivos.</p>
+			<ul>
+				<li>人の多さにびっくりしました <span class="traducao">Me assustei com a quantidade de pessoas</span></li>
+			</ul>
+			<h2>Partícula へ</h2>
+			<p>Apenas indica uma direção, um movimento em uma direção</p>
+			<ul>
+				<li>この電車は東京兵器ます <span class="kana">このでんしゃはとうきょうへいきます</span> <span class="traducao">Este trem vai para tokyo</span></li>
+			</ul>
+			<h2 id="partを">Partícula を</h2>
+			<h2 id="partで">Partícula で</h2>
+			<h2 id="partも">Partícula も</h2>
+			<p>Indica também</p>
+			<p>Alguns usos especiais:</p>
+			<ul>
+				<li>何も <span class="kana">なにも</span><span class="traducao">Nada</span></li>
+				<li>どこも <span class="traducao">Lugar nenhum</span></li>
+				<li>誰も <span class="kana">だれも</span><span class="traducao">Ninguém</span></li>
+				<li>いつも <span class="traducao">Sempre</span></li>
+			</ul>
+			<h2 id="partの">Partícula の</h2>
+			<h2 id="partと">Partícula と</h2>
+			<h2 id="partから">Partícula から</h2>
+			<p>Usada depois de dar uma razão para alguma coisa</p>
+			<ul>
+				<li>楽しいからプールで遊びます <span class="kana">たのしいからプールであそびます</span> <span class="traducao">Brinco na piscina porque é divertido</span></li>
+			</ul>
+			<h2 id="partまで">Partícula まで</h2>
+		</div>
+	</div>
+
+	<div class="topic">
+		<div class="topic-banner"></div>
+		<div class="topic-content" id="verbos">
+			<h1>Verbos</h1>
+			<h2>Infinitivo (Forma de dicionário)</h2>
+			<h2>Forma ~ましょう</h2>
+			<p>Para montar essa forma, basta remover o す da forma ます e acrescentar しょう</p>
+			<aside class="example">
+				<ul class="first">
+					<li>行きます <span class="kana">いきます</span> <span class="traducao">Ir</span></li>
+					<li>行きましょう <span class="kana">いきましょう</span> <span class="traducao">Vamos lá</span></li>
+				</ul>
+				<ul>
+					<li>食べます <span class="kana">たべます</span> <span class="traducao">Comer</span></li>
+					<li>食べましょう <span class="kana">たべましょう</span> <span class="traducao">Vamos comer</span></li>
+				</ul>
+				<ul>
+					<li>寝ます <span class="kana">ねます</span> <span class="traducao">Dormir</span></li>
+					<li>寝ましょう <span class="kana">ねましょう</span> <span class="traducao">Vamos dormir</span></li>
+				</ul>
+			</aside>
+			<p>Esta forma é usada pra quando se chama alguém para ir fazer alguma coisa, indepedente da vontade do outro, ou seja, não é um convite.</p>
+			<aside class="example">
+				<h3>Exemplos</h3>
+				<ul class="first">
+					<li>外に食べましょう <span class="kana">そのにたべましょう</span> <span class="traducao">Vamos comer lá fora</span></li>
+					<li>病院に行きましょう <span class="kana">びょういんにいきましょう</span> <span class="traducao">Vamos no hospital</span></li>
+				</ul>
+			</aside>
+			<h2>Forma ~ましょうか</h2>
+			<p>Para montar essa forma, basta remover o す da forma ます e acrescentar しょうか</p>
+			<aside class="example">
+				<ul class="first">
+					<li>行きます <span class="kana">いきます</span> <span class="traducao">Ir</span></li>
+					<li>行きましょうか <span class="kana">いきましょうか</span> <span class="traducao">Vamos lá</span></li>
+				</ul>
+				<ul>
+					<li>食べます <span class="kana">たべます</span> <span class="traducao">Comer</span></li>
+					<li>食べましょうか <span class="kana">たべましょうか</span> <span class="traducao">Vamos comer</span></li>
+				</ul>
+				<ul>
+					<li>寝ます <span class="kana">ねます</span> <span class="traducao">Dormir</span></li>
+					<li>寝ましょうか <span class="kana">ねましょうか</span> <span class="traducao">Vamos dormir</span></li>
+				</ul>
+			</aside>
+			<p>Forma usada para se oferecer para fazer alguma coisa</p>
+			<h2>Forma ~ませんか</h2>
+			<p>Para montar essa forma, basta remover o す da forma ます e acrescentar せんか</p>
+			<p>Essa forma é usada para se fazer um convite para alguma coisa.</p>
+			<h2>Forma ~たい</h2>
+			<p>Para montar essa forma, basta remover o ます da forma ます e acrescentar たい</p>
+			<aside class="example">
+				<ul class="first">
+					<li>休みます <span class="kana">やすみます</span> <span class="traducao">Descansar</span></li>
+					<li>休みたい <span class="kana">やすみたい</span> <span class="traducao">Quero descansar</span></li>
+				</ul>
+				<ul>
+					<li>働きます <span class="kana">はたらきます</span> <span class="traducao">Trabalhar</span></li>
+					<li>働きたい <span class="kana">はたらきたい</span> <span class="traducao">Quero trabalhar</span></li>
+				</ul>
+				<ul>
+					<li>勉強します <span class="kana">べんきょうします</span> <span class="traducao">Estudar</span></li>
+					<li>勉強したい <span class="kana">べんきょうしたい</span> <span class="traducao">Quero estudar</span></li>
+				</ul>
+				<ul>
+					<li>寝ます <span class="kana">ねます</span> <span class="traducao">Dormir</span></li>
+					<li>寝たい <span class="kana">ねたい</span> <span class="traducao">Quero Dormir</span></li>
+				</ul>
+			</aside>
+			<p>Forma usada para indicar que se quer fazer alguma coisa. Sem です no final falamos <strong>informalmente</strong>. Para se falar <strong>formalmente</strong> basta adicionar です no final.</p>
+		</div>
+	</div>
+	
+</body>
+</html>
