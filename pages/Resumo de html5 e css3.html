@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Resumo de HTML5 e CSS3</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Goblin+One&display=swap');
+
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			background-image: linear-gradient(180deg, white 30%, rgb(124, 124, 124));
+			
+		}
+
+		h1 {
+			font: 40px 'Goblin One', 'Times New Roman', Times, serif;
+			text-align: center;
+			padding: 1%;
+		}
+
+		h2 {
+			text-align: center;
+		}
+
+		h3 {
+			text-align: center;
+		}
+
+		div.listas {
+			border: 1px solid black;
+			background-color: rgb(165, 177, 177);
+			width: 49%;
+			display: inline-block;
+			margin: auto;
+			vertical-align: top;
+		}
+
+		ul {
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		li > p {
+			font-size: 1rem;
+			display: none;
+			width: 75%;
+			text-align: center;
+		}
+
+		li:hover > p {
+			display: inline-block;
+		}
+
+		li:hover > .extra {
+			display: block;
+		}
+
+		.extra {
+			width: auto;
+		}
+
+		li:hover {
+			background-color: rgb(135, 145, 145);
+		}
+
+		iframe {
+			width: 56.0vw;
+			height: 31.5vw;
+			margin-top: 20px;
+		}
+
+		.video {
+			align-self: center;
+			text-align: center;
+			width: auto;
+			height: auto;
+		}
+
+		#html {
+			position: relative;
+		}
+	</style>
+</head>
+<body>
+	<h1>RESUMO DE TAGS HTML E PROPRIEDADES DE CSS's</h1>
+	<div id="html" class="listas">
+		<h2>Tags HTML</h2>
+		<ul>
+			<!-- <li><abbr title="Use a tag &lt;&gt;"></abbr></li> -->
+			<li>p <p>Cria um parágrafo</p></li>
+			<li>h1 até h6 <p>Cria títulos para organizar seu conteúdo</p></li>
+			<li>img <p>Carrega imagens no site</p></li>
+			<li>video <p>Carrega vídeos no site</p></li>
+			<li>audio <p>Carrega audios no site</p></li>
+			<li>iframe <p>cria algo que ainda não sei o que é</p></li>
+			<li>a <p>É uma âncora que cria ligações entre páginas</p></li>
+			<li>ol <p>Cria listas ordenadas</p></li>
+			<li>ul <p>Cria listas onde a ordem não é importante (como esta aqui)</p></li>
+			<li>li <p>Tag usada para cada elemento de uma lista (com ordem ou sem)</p></li>
+			<li>strong <p>Tag para negrito (prefira usar CSS)</p></li>
+			<li>em <p>Tag para itálico (emfase) (prefira usar CSS)</p></li>
+			<li>ins <p>Tag para underline</p></li>
+			<li>sub <p>Tag para coisas subescritas</p></li>
+			<li>sup <p>Tag para coisas sobrescritas</p></li>
+			<li>mark <p>Tag para marca-texto</p></li>
+			<li>strike <p>Tag para riscar o texto</p></li>
+			<li>q <p>Usado em citações (quotes)</p></li>
+			<li>blockquote <p>Use em citações em bloco</p></li>
+			<li>abbr <p>Use para criar janelinhas que abrem ao passar o mouse sobre o conteúdo</p></li>
+			<li>code <p>Use em códigos fontes</p></li>
+			<li>bdo <p>Inverte o Texto</p></li>
+		</ul>
+
+		<h3>Tags de Agrupamento</h3>
+		<ul>
+			<li>div <p>Cria uma caixa box level</p></li>
+			<li>span <p>Cria uma caixa do tipo inline level</p></li>
+			<li>header <p>é uma div com a função semântica de ser o cabeçalho do site</p></li>
+			<li>nav <p>É uma div com a função semântica de ser um menu</p></li>
+			<li>main <p>É uma div com a função semântica de ser o conteúdo principal do site</p></li>
+			<li>section <p>É uma div que representa uma seção genérica do conteúdo principal</p></li>
+			<li>article</li>
+			<li>aside</li>
+			<li>footer <p>É uma div com a função semântica de ser o rodapé do site</p></li>
+		</ul>
+	</div>
+
+	<div id="css" class="listas">
+		<h2>Formatadores de CSS's</h2>
+		<ul>
+			<!-- <li><abbr title=""></abbr></li> -->
+			<li>font-size<p>Ajusta o tamanho do corpo da fonte</p></li>
+			<li>font-family<p>Ajusta o estilo da fonte</p></li>
+			<li>font-style<p>Coloca em italico ou normal</p></li>
+			<li>font-weight<p>Ajusta a 'grossura' da fonte (bold)</p></li>
+			<li>text-align<p>alinha o texto no meio, na esquerda, na direita, ou justificado</p></li>
+			<li>text-decoration<p>pode sublinhar o texto, entre outras coisas</p></li>
+			<li>color<p>Arruma a cor do elemento em questão</p></li>
+			<li>background-color<p>Muda a cor  do fundo</p></li>
+			<li>height<p>Ajusta a altura da caixa</p></li>
+			<li>width<p>Ajusta a largura da caixa</p></li>
+			<li>display <p>Configura como que a caixa será exibida na tela</p> <p class="extra">Tipos de display: none: esconde o conteudo, inline-block: coloca a caixa como inline level, block: coloca a caixa como box level)</p></li>
+			<li>font (shorthand)<p>Shorthand para ajuste de fontes (style, weight, size, family)</p></li>
+			<li>border (shorthand)<p>Shorthand para ajuste de bordas (largura, tipo, cor)</p> <p class="extra">tipos de borda: solid, dashed, dotted, double, groove</p></li>
+			<li>padding (shorthand) <p>Cria um afastamento entre a borda de uma caixa e seu interior, seu conteudo</p> <p class="extra">shorthand(top, right, bottom, left)</p></li>
+			<li>margin (shorthand)<p>Cria um afastamento entre a borda de uma caixa e seu exterior</p> <p class="extra">shorthand(top, right, bottom, left)</p></li>
+			<li>outline (shorthand) <p>Cria uma borda depois da borda, mas dentro da margem</p> <p class="extra">shorthand(largura, tipo, cor)</p></li>
+			<li>vertical-align <p>alinha caixas verticalmente</p></li>
+			<li>box-shadow (shorthand) <p>colocar sombras em caixas</p> <p class="extra">shorthand:(offsetx, offsety, espalhamento, cor)</p></li>
+			<li>border-radius <p>Usado para arredondar os vertices da caixa</p></li>
+			<li>border-image (shorthand) <p>usado para criar a borda da caixa a partir de um arquivo de imagem</p> <p class="extra">shorthand:(source, slice, repeat)</p></li>
+		</ul>
+
+		<h3>Pseudo Classes CSS</h3>
+		<p>pseudo classes são usadas para mudar a formatação do conteudo depedendo de seu estado</p>
+		<ul>
+			<li>:hover<p>Ao Passar o Mouse Por cima</p></li>
+			<li>:visited<p>site ja visitado</p></li>
+			<li>:active<p>ativa quando o elemento esta sendo clicado</p></li>
+			<li>:root <p>Usado para colocar variaveis no começo do arquivo CSS</p></li>
+		</ul>
+		
+		<h3>Pseudo Elemento</h3>
+		<p>pseudos elementos são usados para alterar o conteudo do html</p>
+		<ul>
+			<li>::after <p>usado para adicionar um conteudo depois de cada elemento de algum tipo</p></li>
+		</ul>
+
+		<h3>Seletores Personalizados</h3>
+		<ul>
+			<li># <p>indica que é id</p></li>
+			<li>. <p>indica que é classe</p></li>
+			<li>: <p>indica que é pseudo classe</p></li>
+			<li>:: <p>indica que é pseudo elemento</p></li>
+			<li>> <p>indica que é um elemento filho de outro</p></li>
+			<li>* <p>Seletor global</p></li>
+		</ul>
+
+	</div>
+	<!-- 
+	<div class="video">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/KwMut-fNuq4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>-->
+</body>
+</html>
