@@ -111,6 +111,17 @@
 			<li>abbr <p>Use para criar janelinhas que abrem ao passar o mouse sobre o conteúdo</p></li>
 			<li>code <p>Use em códigos fontes</p></li>
 			<li>bdo <p>Inverte o Texto</p></li>
+			<li>table <p>principal tag usada para criar tabelas</p></li>
+			<li>tr <p>table row, cria uma linha para a tabela</p></li>
+			<li>td <p>table data, usado para colocar os dados dentro de uma linha (cada td delimita uma coluna)</p></li>
+			<li>thead <p>cabeçalho de uma tabela grande</p></li>
+			<li>th <p>Usado para adicionar os dados nos cabeçalhos de tabelas</p></li>
+			<li>tbody <p>parte principal de uma tabela grande</p></li>
+			<li>tfoot <p>rodapé de uma tabela grande</p></li>
+			<li>caption <p>Tag onde se coloca a descrição de uma tabela</p></li>
+			<li>scope <p>Não é uma tag, mas uma característica para ser adicionada nas tags de tabelas. Ela ajuda os mecanismos de busca a analisar as tabelas do site, portanto não gera resultados visuais.</p></li>
+			<li>colspan <p>Não é uma tag, mas uma característica para ser adicionada nas tags de tabelas. Ela faz com que uma linha seja expandida para ocupar mais <strong>colunas</strong></p></li>
+			<li>rowspan <p>Não é uma tag, mas uma característica para ser adicionada nas tags de tabelas. Ela faz com que uma coluna seja expandida para ocupar mais <strong>linhas</strong></p></li>
 		</ul>
 
 		<h3>Tags de Agrupamento</h3>
@@ -147,7 +158,7 @@
 			<li>padding (shorthand) <p>Cria um afastamento entre a borda de uma caixa e seu interior, seu conteudo</p> <p class="extra">shorthand(top, right, bottom, left)</p></li>
 			<li>margin (shorthand)<p>Cria um afastamento entre a borda de uma caixa e seu exterior</p> <p class="extra">shorthand(top, right, bottom, left)</p></li>
 			<li>outline (shorthand) <p>Cria uma borda depois da borda, mas dentro da margem</p> <p class="extra">shorthand(largura, tipo, cor)</p></li>
-			<li>vertical-align <p>alinha caixas verticalmente</p></li>
+			<li>vertical-align <p>alinha caixas verticalmente (pode ser usado para alinha td em tabelas)</p></li>
 			<li>box-shadow (shorthand) <p>colocar sombras em caixas</p> <p class="extra">shorthand:(offsetx, offsety, espalhamento, cor)</p></li>
 			<li>border-radius <p>Usado para arredondar os vertices da caixa</p></li>
 			<li>border-image (shorthand) <p>usado para criar a borda da caixa a partir de um arquivo de imagem</p> <p class="extra">shorthand:(source, slice, repeat)</p></li>
@@ -155,11 +166,12 @@
 			<li>background-repeat <p>Usado para definir se a imagem de fundo deverá ou não se repetir e em quais eixos (x, y)</p></li>
 			<li>background-attachment <p>Pode ser usado para definir se a imagem irá rolar com ou fundo ou ficará fixa</p></li>
 			<li>background (shorthand) <p>(color -> image -> position -> repeat -> size -> attachment) (pode ser que o size não funcione)</p></li>
-			<li>position <p>pode ser setada em <em>relative</em> ou <em>absolute</em>. Por padrão as caixas já vem com posições relativas. Se setada em absoluto é possível configurar as características <em>left</em> e <em>right</em> da caixa.</p></li>
+			<li>position <p>pode ser setada em <em>relative</em> ou <em>absolute</em>. Por padrão as caixas já vem com posições relativas. Se setada em absoluto é possível configurar as características <em>left</em> e <em>top</em> da caixa. Outro valor interessante dessa regra é o sticky, que pode ser usado junto com as regras <strong>top</strong> e <strong>left</strong> para manter o elemento na tela mesmo após sair da rolagem</p></li>
 			<li>left <p>Aplica uma translação na borda superior esquerda da caixa com relação à parte esquerda da tela</p></li>
 			<li>top <p>Aplica uma translação na borda superior esquerda da caixa com relação à parte superior da tela</p></li>
 			<li>transform <p>Pode ser usado com algumas funções para aplicar mudanças uteis nas caixas</p> <p>Útial para centralizar duas caixas. colocando left:50%;top:50%;transform:translate(-50%,-50%); na caixa interior ela ficará alinhada a caixa pai</p></li>
 			<li>font-variant <p>util para deixar o texto em uma espécie de "semi-caps-lock"</p></li>
+			<li>border-collapse <p>usado para juntar as linhas e colunas de uma tabela</p></li>
 		</ul>
 
 		<h3>Pseudo Classes CSS</h3>
@@ -169,6 +181,7 @@
 			<li>:visited<p>site ja visitado</p></li>
 			<li>:active<p>ativa quando o elemento esta sendo clicado</p></li>
 			<li>:root <p>Usado para colocar variaveis no começo do arquivo CSS</p></li>
+			<li>:nth-child() <p>Aplica certas configurações para os filhos de algum elemento. O argumento entre parentese indica a cada quantas células a configuração será a aplicada</p></li>
 		</ul>
 		
 		<h3>Pseudo Elemento</h3>
