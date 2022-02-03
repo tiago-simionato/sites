@@ -6,24 +6,129 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Resumo de JavaScript</title>
 	<style>
-		div.topico {
-			margin: auto;
-			border: 1px solid black;
-			min-width: 300px;
-			max-width: 1000px;
-			padding: 10px;
-			text-indent: 3em;
+		/*
+		CORES
+		#F2CB05
+		#F2B705
+		#0D0D0D
+		#F22283
+		#F22E62
+		*/
+		:root {
+			--maincor: #F2CB05;
+			--analogo: #F2B705;
+			--analogo2: #F5EC4A;
+			--preto: #0D0D0D;
+			--comp1: #F21DC8;
+			--comp2: #F22E62;
+			--comp3: #A81B8B;
 		}
 
-		.topico a {
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+
+		body {
+			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			background-color: var(--analogo2);
+		}
+
+		header {
+			background-color: var(--comp3);
+			border: 2px solid black;
+			width: fit-content;
+			margin: 30px auto 30px auto;
+			padding: 20px 50px;
+			color: var(--maincor);
+			text-shadow: 1px 1px 2px black;
+			font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+			font-size: 1.5em;
+			box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.253);
+		}
+
+		div.topic {
+			margin: 20px auto;
+			border: 1px solid black;
+			background-color: white;
+			min-width: 300px;
+			max-width: 900px;
+			padding: 0px 10px 20px 10px;
+			width: 83%;
+			box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.253);
+			border-radius: 0px 0px 5px 5px;
+		}
+
+		.topic h1 {
+			margin: 15px;
+		}
+
+		.att {
+			margin: 2em;
+			padding: 5px;
+			background-color: var(--maincor);
+			text-align: center;
+			box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.253);
+			border: 1px solid black;
+			border-radius: 20px;
+		}
+
+		.att h3 {
+			padding: 0px;
+		}
+
+		a {
+			color: var(--comp1);
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+
+		a:hover {
+			color: var(--comp3);
+		}
+
+		.topic a {
 			display: block;
 			line-height: 2em;
 			text-indent: 2em;
 		}
+
+		h1 {
+			text-align: center;
+		}
+
+		h2 {
+			text-indent: 2em;
+			padding: 15px;
+		}
+
+		p {
+			padding: 15px;
+			text-indent: 1em;
+		}
+
+		ul {
+			list-style: inside;
+			line-height: 2em;
+			padding: 20px;
+		}
+
+		ul.inside {
+			padding: 0px 25px;
+		}
+
+		/*Spans*/
+		.js {
+
+		}
 	</style>
 </head>
 <body>
-	<div class="topico">
+	<header>
+		<h1>Resumo de <span class="js">JavaScript</span></h1>
+	</header>
+
+	<div class="topic">
 		<h1>Guias</h1>
 		<a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript">Guia da Mozzila para JavaScript</a>
 		<a href="https://developer.mozilla.org/pt-BR/">Recursos da Mozilla para Desenvolvedores</a>
@@ -32,15 +137,41 @@
 	
 	<div class="topic">
 		<h1>Funções básicas de JavaScript</h1>
+		<h2>Métodos de objetos do DOM</h2>
 		<ul>
-			<li>window.alert(String)</li>
-			<li>window.confirm(String)</li>
-			<li>window.prompt(String)</li>
+			<li>window.alert(string)</li>
+			<li>boolean window.confirm(string)</li>
+			<li>string window.prompt(string)</li>
+			<li>document.write(string)</li>
 			<li>typeof</li>
+		</ul>
+
+		<h2>Métodos de tipos primitvos de dados</h2>
+		<ul>
+			<li>Number.parseInt(string)</li>
+			<li>Number.parseFloat(string)</li>
+			<li>Number()</li>
+			<li>String(number)</li>
+			<li>n.toString()</li>
+			<li>number n.toFixed(number)</li>
+			<li>number n.replace('.', ',')</li>
+			<li>s.length</li>
+			<li>s.toUpperCase()</li>
+			<li>s.toLowerCase()</li>
+		</ul>
+
+		<h2>Selecionando Elementos do DOM</h2>
+		<ul>
+			<li>getElementsByTagName()</li>
+			<li>getElementByID()</li>
+			<li>getElementsByName()</li>
+			<li>getElementsByClassName()</li>
+			<li>querySelector()</li>
+			<li>querySelectorAll()</li>
 		</ul>
 	</div>
 
-	<div>
+	<div class="topic"> 
 		<h1>Sintaxe</h1>
 
 		<h2>Comentários</h2>
@@ -50,10 +181,11 @@
 		</ul>
 		
 		<h2>Declaração de variáveis</h2>
-		<p>
-			var n3 = 5; <br>
-			var s1 = "JavaScript";
-		</p>
+		<ul>
+			<li>var n3 = 5; </li>
+			<li>var s1 = "JavaScript";</li>
+		</ul>
+
 		<h2>Nome de variaveis</h2>
 		<ul>
 			<li>Podem começar com letra ou $ ou _</li>
@@ -63,22 +195,85 @@
 			<li>Não podem ser palavras reservadas (ex var)</li>
 			<li>JS é Case Sensitive</li>
 		</ul>
-		<p>Atenção! ';' são opcionais</p>
+		<aside class="att">
+			<h3>Atenção!</h3>
+			<p>Atenção! <strong><em>;</em></strong> são opcionais ao final de cada linha</p>
+		</aside>
 
-		<h2>Tipos primitivos</h2>
+		<h2>Formatando string</h2>
 		<ul>
-			<li>Number</li>
-			<ul>
+			<li>'Começa a string e adiciona uma ' + variavel</li>
+			<li>'Começa a string e adiciona uma ${variavel}'</li>
+		</ul>
+	</div>
+
+	<div class="topic">
+		<h1>Tipos primitivos no JS</h1>
+		<ul>
+			<li>number</li>
+			<ul class="inside">
 				<li>NaN</li>
 				<li>infinity</li>
 			</ul>
-			<li>String</li>
-			<li>Boolean</li>
-			<li>null</li>
-			<li>object</li>
+			<li>string</li>
+			<li>boolean</li>
+			<li>Object</li>
+			<ul class="inside">
+				<li>array</li>
+				<li>null</li>
+			</ul>
 			<li>undefined</li>
 			<li>function</li>
 		</ul>
+	</div>
+
+	<div class="topic">
+		<h1>Operadores no JS</h1>
+
+		<h2>Aritméticos</h2>
+		<ul>
+			<li>+: Soma</li>
+			<li>-: Subtração</li>
+			<li>*: Multiplicação</li>
+			<li>/: Divisão Real</li>
+			<li>%: Resto de divisão inteira</li>
+			<li>**: Potência</li>
+		</ul>
+		<p>Ordem de precedência dos operadores aritméticos: (**) ⇨ (*, /, %) ⇨ (+, -)</p>
+
+		<h2>Atribuição</h2>
+		<ul>
+
+		</ul>
+		<h2>Relacionais</h2>
+		<ul>
+			<li>< : Menor</li>
+			<li>> : Maior</li>
+			<li>>=: Maior igual</li>
+			<li><=: Menor igual</li>
+			<li>==: Igual</li>
+			<li>===: Identidade (ou igualdade restrita)</li>
+			<li>!=: Diferente</li>
+			<li>!==: Desigual restrito (tipos iguais ou diferentes)</li>
+		</ul>
+		<h2>Lógicos</h2>
+		<ul>
+			<li>!: Negação</li>
+			<li>&&: E lógico</li>
+			<li>||: OU lógico</li>
+		</ul>
+		<p>Ordem de precedência de operadores lógicos: ! ⇨ && ⇨ ||</p>
+		<p>Ordem de precedência de tipos de operadores: Aritméticos ⇨ Relacionais ⇨ Lógicos</p>
+		<h2>Ternário</h2>
+		<ul>
+			<li>teste? true:false</li>
+			<li>media >= 7? 'Aprovado': 'Reprovado'</li>
+		</ul>
+	</div>
+
+	<div>
+		<h1>Árvore DOM</h1>
+		<img src="../images/arvoreDOM.png" alt="Árvore DOM">
 	</div>
 </body>
 </html>
