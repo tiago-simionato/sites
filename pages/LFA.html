@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="../favicons/synthsun.ico" type="image/x-icon">
+	<title>Resumo LFA</title>
+	<style>
+		:root {
+			--maincor: #023047;
+			--analogo: #219ebc;
+			--analogo2: #8ecae6;
+			--contraste: #ffb703;
+			--contraste2: #fb8500;
+
+		}
+
+		body {
+			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			/*background-color: var(--analogo2);*/
+			background-image: linear-gradient(135deg, var(--analogo2), var(--analogo) ,var(--maincor));
+		}
+
+		header {
+			border: 2px solid black;
+			width: fit-content;
+			margin: 30px auto 30px auto;
+			padding: 20px 50px;
+			text-shadow: 1px 1px 2px black;
+			font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+			font-size: 1.5em;
+			box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.253);
+		}
+
+		ul#navul {
+			list-style: none;
+			line-height: 1em;
+		}
+
+		div.topic {
+			margin: 20px auto;
+			border: 1px solid black;
+			background-color: white;
+			min-width: 300px;
+			max-width: 900px;
+			padding: 0px 10px 20px 10px;
+			width: 83%;
+			box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.253);
+			border-radius: 0px 0px 5px 5px;
+		}
+
+		.topic h1 {
+			margin: 15px;
+			color: var(--contraste2);
+		}
+
+		.att {
+			margin: 2em;
+			padding: 5px;
+			text-align: center;
+			box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.253);
+			border: 1px solid black;
+			border-radius: 20px;
+			background-color: var(--maincor);
+			color: white;
+		}
+
+		.att h3 {
+			padding: 0px;
+		}
+
+		a {
+			text-decoration: none;
+			text-transform: uppercase;
+			color: var(--contraste);
+			font-weight: bolder;
+		}
+
+		a:hover {
+			color: var(--contraste2);
+		}
+
+		.topic a {
+			display: block;
+			line-height: 2em;
+			text-indent: 2em;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		h2 {
+			text-indent: 2em;
+			padding: 15px;
+		}
+
+		p {
+			padding: 15px;
+			text-indent: 1em;
+		}
+
+		span.destaque {
+			color: var(--analogo);
+			font-weight: bold;
+		}
+
+		.topic ul {
+			list-style: inside;
+			line-height: 2em;
+			padding: 20px;
+			text-indent: 1.3em;
+		}
+
+		ul.inside {
+			padding: 0px 25px;
+		}
+
+		table {
+			border-collapse: collapse;
+			margin: auto;
+		}
+
+		td {
+			border: 1px solid black;
+			padding: 3px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Pontos Chave de Linguagens Formais e Automatas</h1>
+
+	<div class="topic">
+		<h1>To-do</h1>
+		<ul>
+			<li>trocar (gamma) por um gamma com chapeu</li>
+			<li>colocar o somatorio apropriadoe em (somatorio)</li>
+		</ul>
+	</div>
+
+	<div class="topic">
+		<h1>Índice</h1>
+		<nav>
+			<ul id="navul">
+				<li><a href="#alfabeto">Alfabetos e Cadeias</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<div class="topic" id="alfabeto">
+		<h1>Alfabetos e cadeias</h1>
+		<p>Um <span class="destaque">alfabeto</span> é um conjunto finito de elementos chamados <span class="destaque">símbolos</span> geralmente representados por letras gregas maíusculas. <br>
+		Exemplos: Σ = {0,1}, Σ<sub>1</sub> = {a,b, ... , z} , Σ<sub>2</sub> = {a,b}, Γ = {#. a1. bd}</p>
+		
+		<p>Dado um alfabeto Σ, uma <span class="destaque">cadeia</span> (sobre Σ) é uma sequência x<sub>1</sub>x<sub>2</sub>...x<sub>n</sub>, onde x<sub>i</sub> ∈ Σ para cada 1 <= i <= n, ou seja, é uma sequência finita de símbolos. <br>
+		Geralmente, representadas por letras gregas minúsculas. <br>
+		Outros termos: <span class="destaque">strings</span> ou <span class="destaque">palavras</span>.</p>
+
+		<p>O <span class="destaque">comprimento</span> de uma cadeia ω é a quantidade de posições na sequência e é denotado por |ω|. <br>
+		<h3>Exemplos:</h3> 
+			<ul>
+				<li>ω = 011011 é a cadeia sobre Σ = {0,1} e |ω| = 6</li>
+				<li>α=carla é a cadeia sobre Σ<sub>1</sub> = {a,b, ... ,z} e |α| = 5</li>
+				<li>β = bd#a1bd é a cadeia sobre Γ = {#, a1, bd} e |β| = 4</li>
+			</ul>
+		</p>
+
+		<p>Se x ∈ Σ e ω é cadeia sobre Σ, denotamos por |ω|<sub>x</sub> a quantidade de vezes que o símbolo x aparece em ω.</p>
+		<h3>Exemplos</h3>
+		<ul>
+			<li>|α|<sub>a</sub> = 2</li>
+			<li>|ω|<sub>1</sub> = 4</li>
+		</ul>
+	</div>
+
+	<div class="topic">
+		<h1>Concatenação de cadeias</h1>
+		<p>A <span class="destaque">concatenação</span> de uma cadeia α = α<sub>1</sub>α<sub>2</sub>...α<sub>n</sub> com uma cadeia β = β<sub>1</sub>β<sub>2</sub>...β<sub>m</sub> é a cadeia αβ = α<sub>1</sub>α<sub>2</sub>...α<sub>n</sub>β<sub>1</sub>β<sub>2</sub>...β<sub>m</sub> <br>
+		Denotamos por α<sup>k</sup> a concatenação de α com ela mesma k vezes.</p>
+
+		<h2>Cadeia importantes</h2>
+		<p>O <span class="destaque">reverso</span> da cadeia ω = ω<sub>1</sub>ω<sub>2</sub>...ω<sub>n</sub> é a cadeia ω<sup>R</sup> = ω<sub>n</sub>w<sub>n-1</sub>...ω<sub>1</sub>.</p>
+
+		<p>A <span class="destaque">cadeia vazia</span>, denotada por ε, é a cadeia de comprimento 0. <br>
+		Obs: para qualquer cadeia ω sobre Σ, ωε = εω = ω</p>
+	</div>
+
+	<div class="topic">
+		<h1>Subcadeias</h1>
+		<p>Uma cadeia β é <span class="destaque">subcadeia</span> de outra cadeia ω se existem cadeia α e γ tais que ω = αβγ</p>
+	</div>
+
+	<div class="topic">
+		<h1>Potência de alfabeto</h1>
+		<p>Dados um alfabeto Σ, denotamos por Σ<sup>k</sup> o conjunto de todas as cadeias de comprimento k sobre Σ. <br>
+		Obs: |Σ<sup>k</sup>| = |Σ|<sup>k</sup></p>
+	</div>
+
+	<div class="topic">
+		<h1>Fecho de Kleene e fecho positivo de alfabetos</h1>
+		<p>fecho de Kleene de Σ, denotado por Σ*, é o conjunto de todas as cadeias sobre Σ, isto é, <span style="display: block;">Σ* = Σ<sup>0</sup> U Σ<sup>1</sup> Σ<sup>2</sup> U ... = (somatorio)</span></p>
+		<p>O <span class="destaque">fecho positivo</span> de Σ, denotado por Σ<sup>+</sup>, é conjunto de toas as cadeias não vazias sobre Σ</p>
+
+		<p><span class="def">Obervação:</span> agora, ao invés de escrever "ω é uma cadeia sobre o alfabeto Σ", basta escrever "ω ∈ Σ*"</p>
+	</div>
+
+	<div class="topic">
+		<h1>Linguagem</h1>
+		<p>Uma <span class="destaque">linguagem</span> sobre um alfabeto Σ é um subconjunto de Σ*. Geralmente representadas por letras maiúsculas. Assim, "L é uma linguagem sobre Σ* equivale a "L ⊆ Σ*"</p>
+
+	</div>
+
+	<div class="topic">
+		<h1>Automato Finito Determinístico</h1>
+		<p><span class="def">Definição:</span> Um autômato finito determinístico (AFD) é uma 5-upla (Q, Σ, δ, q<sub>0</sub>, F) em que:</p>
+		<ul>
+			<li>Q é um conjuto finito de <span class="destaque">estados</span></li>
+			<li>Σ é um alfabeto</li>
+			<li>Q x Σ &#8594; Q é uma <span class="destaque">função de transição</span></li>
+			<li>q<sub>0</sub> é o <span class="destaque">estado inicial</span></li>
+			<li>F ⊆ Q é o conjunto de <span class="destaque">estados finais</span></li>
+		</ul>
+	</div>
+
+	<div class="topic">
+		<h1>Função de transição estendida</h1>
+		<p><span class="def">Definição:</span> Seja M = (Q, Σ, δ, q<sub>0</sub>, F) um AFD. A <span class="destaque"> Função de transição estendida</span> de M é a função (gamma): Q x Σ* &#8594; Q definida da seguinte forma: para q ∈ Q e ω ∈ Σ*,</p>
+		<table>
+			<tr>
+				<td rowspan="2">(gamma)(q,ω) =</td>
+				<td>q</td>
+				<td>se ω = ε</td>
+			</tr>
+			<tr>
+				<td>δ(gamma(q,α), x)</td>
+				<td>se ω = αx, com x ∈ Σ e α ∈ Σ*</td>
+			</tr>
+		</table>
+		<p>Ou seja, (gamma)(q,ω) é o estado ativo em M após computar toda uma cadeia ω a partir do estado q.</p>
+	</div>
+
+	<div class="topic">
+		<h1>Aceite de um AFD</h1>
+		<p><span class="def">Definição:</span> Seja M = (Q, Σ, δ, q<sub>0</sub>, F) um AFD e seja ω ∈ Σ*. Dizemos que <span class="destaque">M aceita ω</span> se gamma(q<sub>0</sub>,ω) ∈ F. Caso contrário, <span class="destaque">M rejeita ω</span></p>	
+		
+		<p><span class="def">Definição alternativa:</span> Seja M = (Q, Σ, δ, q<sub>0</sub>, F) um AFD e seja ω = ω<sub>1</sub>ω<sub>2</sub>...ω<sub>n</sub> uma cadeia sobre Σ (ω ∈ Σ*). <br>
+		Dizemos que <span class="destaque">M aceita ω</span> se existe uma sequência de estados (r<sub>0</sub>,r<sub>1</sub>,...,r<sub>n</sub>) tal que </p>
+		<ul>
+			<li>r<sub>0</sub> = q<sub>0</sub></li>
+			<li>r<sub>i + 1</sub> = δ(r<sub>i</sub>, ω<sub>i + 1</sub>) para qualquer  i = 0, ... , n- 1</li>
+			<li>r<sub>n</sub> ∈ F</li>
+		</ul>
+	</div>
+
+	<div class="topic">
+		<h1>A linguagem de um AFD</h1>
+		<p><span class="def">Definição:</span> Seja M = (Q, Σ, δ, q<sub>0</sub>, F) um AFD. Dizemos que X = {ω ∈ Σ* : M aceita ω} é <span class="destaque">a linguagem reconhecida por M</span>, ou simplesmente <span class="destaque">a linguagem de M</span>. <br>
+		Também dizemos que <span class="destaque">M reconhece X</span>. <br>
+		Denostamos tal linguagem por L(M).</p>
+	</div>
+
+	<div class="att">
+		<h1><u>Importante</u></h1>
+		<p>
+			um AFD <span class="destaque">aceita</span> cadeias (0 ou mais). <br>
+			Ele <span class="destaque">reconhece</span> uma única linguagem.
+		</p>
+	</div>
+</body>
+</html>
