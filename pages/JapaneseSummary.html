@@ -40,7 +40,7 @@
 		}
 
 		body {
-			font-family: Arial, Helvetica, sans-serif ;
+			font-family: Arial, Helvetica, sans-serif;
 			background-color: var(--maincor);
 		}
 
@@ -67,6 +67,10 @@
 			padding: 15px;
 			background-color: var(--complementar1);
 			border: 1px solid black;
+			font-family: var(--destaque);
+			font-weight: bolder;
+			font-size: 1.2em;
+			text-transform: uppercase;
 		}
 
 		div.dropdownbutton:hover {
@@ -89,6 +93,10 @@
 			left: -1px;
 			top: calc(100% + 1px);
 			outline: 1px solid black;
+			text-transform: none;
+			font-weight: normal;
+			font-size: 1rem;
+			font-family: Arial, Helvetica, sans-serif;
 		}
 
 		div.dropdownbutton:hover .dropdowncontent {
@@ -96,17 +104,21 @@
 			background-color:  var(--complementar1);
 		}
 
-		#indice a {
+		div.dropdowncontent li {
+			line-height: 2em;
+		}
+
+		a {
 			color: var(--cor3);
 			text-decoration: none;
 			font-weight: bold;
 		}
 
-		#indice a:visited {
+		a:visited {
 			color: var(--cor3);
 		}
 
-		#indice a:hover {
+		a:hover {
 			color: var(--maincor);
 		}
 
@@ -131,22 +143,20 @@
 			padding: 20px;
 		}
 
-		.topic h1 {
+		.topic h1, h2, h3 {
 			text-indent: 2em;
 			font-family: var(--destaque);
-			margin-top: 0px;
 		}
 
-		.topic h2 {
-			text-indent: 1.5em;
-			font-family: var(--destaque);
+		.topic h1 {
+			margin-top: 0px;
 		}
 
 		.example {
 			margin: 2em;
 			padding: 20px;
 			/*background-color: var(--cor2);*/
-			background-image: linear-gradient(90deg, var(--cor2), var(--maincor));
+			background-image: linear-gradient(90deg, var(--cor2), var(--maincor), var(--complementar1));
 			box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.253);
 			border-radius: 0px 10px;
 			font-size: 1.3em;
@@ -168,14 +178,20 @@
 		.att {
 			margin: 2em;
 			padding: 20px;
-			/*background-color: var(--cor2);*/
 			background-image: linear-gradient(90deg, var(--cor2), var(--maincor));
 			text-align: center;
 			box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.253);
 			border-radius: 20px;
 		}
 
+		.example .att {
+			background-color: var(--complementar1);
+			background-image: none;
+			font-size: 0.77em;
+		}
+
 		.att h3 {
+			font-size: 1.3em;
 			margin-top: 0%;
 		}
 
@@ -199,9 +215,9 @@
 			/*list-style-type: '\2192';*/
 		}
 
-		li {
+		.topic ul li {
 			max-width: fit-content;
-			line-height: 2em;
+			line-height: 1.3em;
 		}
 
 		.topic li:hover {
@@ -483,7 +499,7 @@
 			<h3>Grupo 3</h3>
 			<p>Nesse grupo estão os verbos します e 来ます, bem como todos os verbos que derivam desses, portanto 勉強します também é um exemplo</p>
 
-			<h2 id="divverb">Infinitivo (Forma de dicionário)</h2>
+			<h2 id="divverb">Infinitivo (Forma de dicionário) <li style="display: inline;">辞書形 <span class="kana">じしょけい ou じしょかたち</span></li></h2>
 			<h3>Grupo 1</h3>
 			<p>Para conjugar os verbos do grupos 1 na forma dicionário a partir da forma ます é preciso olhar para a silaba que vem antes de ます. Coloque no lugar a silaba equivalente da família com som de U e retire o ます</p>
 			<aside class="example">
@@ -578,7 +594,45 @@
 			<h2 id="たform">Forma た</h2>
 			<p>Essa forma nada mais é do que a forma no passado, só que informal. Portanto 食べました = 食べた</p>
 			<h3>Grupo 1</h3>
-			<p></p>
+			<p>Para conjugar esse grupo na forma た é preciso olhar para a silaba que antessede o ます. A seguir seguem os exemplos de como se faz</p>
+			<aside class="example">
+				<h3>Exemplos</h3>
+				<ul>
+					<li>きます ⇨ いた</li>
+					<li>ぎます ⇨ いだ</li>
+					<li>書きます <span class="kana">かきます</span> <span class="traducao">Escrever</span></li>
+					<li>書いた <span class="kana">かいた</span> <span class="traducao">Escreveu</span></li>
+					<li>急ぎます <span class="kana">いそぎます</span> <span class="traducao">Apressar-se</span></li>
+					<li>急いだ <span class="kana">いそうだ</span> <span class="traducao">Apressou-se</span></li>
+				</ul>
+				<aside class="att">
+					<h3>Atenção!</h3>
+					<p>行きます é uma <strong>excessão</strong> e se tornará 行った.</p>
+				</aside>
+				<ul>
+					<li>びます ou みます ou にます ⇨ んだ</li>
+					<li>呼びます <span class="kana">よびます</span> <span class="traducao">Chamar</span></li>
+					<li>呼んだ <span class="kana">よんだ</span> <span class="traducao">Chamou</span></li>
+					<li>読みます <span class="kana">よみます</span> <span class="traducao">Ler</span></li>
+					<li>読んだ <span class="kana">よんだ</span> <span class="traducao">Leu</span></li>
+					<li>死にます <span class="kana">しにます</span> <span class="traducao">Morrer</span></li>
+					<li>死んだ <span class="kana">しんだ</span> <span class="traducao">Morreu</span></li>
+				</ul>
+				<ul>
+					<li>ります ou います ou ちます ⇨ った</li>
+					<li>帰ります <span class="kana">かえります</span> <span class="traducao">Ir para casa</span></li>
+					<li>帰った <span class="kana">かえった</span> <span class="traducao">Foi para casa</span></li>
+					<li>買います <span class="kana">かいます</span> <span class="traducao">Comprar</span></li>
+					<li>買った <span class="kana">かった</span> <span class="traducao">Comprou</span></li>
+					<li>待ちます <span class="kana">まちます</span> <span class="traducao">Esperar</span></li>
+					<li>待った <span class="kana">まった</span> <span class="traducao">Esperou</span></li>
+				</ul>
+				<ul>
+					<li>します ⇨ した</li>
+					<li>話します <span class="kana">はなします</span> <span class="traducao">Conversar</span></li>
+					<li>話した <span class="kana">はなした</span> <span class="traducao">Conversou</span></li>
+				</ul>
+			</aside>
 			<h3>Grupo 2</h3>
 			<p>Simplesmente remova o ます e acrescente o た</p>
 			<aside class="example">
@@ -604,16 +658,16 @@
 					<li>見た <span class="kana">みた</span> <span class="traducao">Vi</span></li>
 				</ul>
 				<ul>
-					<li> <span class="kana"></span> <span class="traducao"></span></li>
-					<li> <span class="kana"></span> <span class="traducao"></span></li>
+					<li>います <span class="kana">います</span> <span class="traducao"></span></li>
+					<li>いた <span class="kana">いた</span> <span class="traducao"></span></li>
 				</ul>
 				<ul>
-					<li> <span class="kana"></span> <span class="traducao"></span></li>
-					<li> <span class="kana"></span> <span class="traducao"></span></li>
+					<li>借ります <span class="kana">かります</span> <span class="traducao">Pegar emprestado, alugar</span></li>
+					<li>借りた <span class="kana"></span>かりた<span class="traducao">Pegou emprestado, alugou</span></li>
 				</ul>
 				<ul>
-					<li> <span class="kana"></span> <span class="traducao"></span></li>
-					<li> <span class="kana"></span> <span class="traducao"></span></li>
+					<li>起きます <span class="kana">おきます</span> <span class="traducao">Acordar</span></li>
+					<li>起きた <span class="kana">おきた</span> <span class="traducao">Acordou</span></li>
 				</ul>
 			</aside>
 			<h3>Grupo 3</h3>
@@ -669,8 +723,8 @@
 			<h3>Grupo 3</h3>
 			<p>Neste grupo します vira しない e 来ます vira 来ない（こない）</p>
 
-			<h2 id="kanouform">Forma Potencial 可能形 <li style="display: inline;"><span class="kana">かのうけい ou かのうかたち</span></li></h2>
-			<p>Forma usada para mostrar habilidades ou possibilidades.</p>
+			<h2 id="kanouform">Forma Potencial <li style="display: inline;">可能形 <span class="kana">かのうけい ou かのうかたち</span></li></h2>
+			<p>Forma usada para mostrar habilidade em se realizar uma ação ou a possibilidade de se realiza-la (pois alguém deixa).</p>
 			<h3>Grupo 1</h3>
 			<p>Para conjugar o grupo 1 na forma potencial, troque o som de i para som de e, mantendo a família</p>
 			<aside class="example">
@@ -720,8 +774,102 @@
 				<p>Quando a forma 可能形 for usada e houver algo sobre o qual conseguimos ou podemos aplicar a ação, isto é, se houver a partícula を na frase, devemos substituí-la pela partícula が</p>
 			</aside>
 
+			<h2 id="ikouform">Forma Volitiva <li style="display: inline;">意向形 <span class="kana">いこうけい ou いこうかたち</span></li></h2>
+			<p>Forma usada para demonstrar vontade ou intenção de fazer alguma coisa. Esta é a forma informal de ましょう</p>
+			<h3>Grupo 1</h3>
+			<p>Para conjugar esse grupo, mude o som antes de ます para o e acrescente um う</p>
+			<aside class="example">
+				<h3>Exemplos</h3>
+				<ul>
+					<li>行きます <span class="kana">いきます</span> <span class="traducao">Ir</span></li>
+					<li>行こう <span class="kana">いこう</span> <span class="traducao">Vamos lá</span></li>
+				</ul>
+				<ul>
+					<li>読みます <span class="kana">よみます</span> <span class="traducao">Ler</span></li>
+					<li>読もう <span class="kana">よもう</span> <span class="traducao">Vamos ler</span></li>
+				</ul>
+				<ul>
+					<li>遊びます <span class="kana">あそびます</span> <span class="traducao">Brincar</span></li>
+					<li>遊ぼう <span class="kana">あそぼう</span> <span class="traducao">Vamos brincar (sair, se divertir)</span></li>
+				</ul>
+				<ul>
+					<li>買います <span class="kana">かいます</span> <span class="traducao">Comprar</span></li>
+					<li>買おう <span class="kana">かおう</span> <span class="traducao">Vamos comprar</span></li>
+				</ul>
+				<ul>
+					<li>話します <span class="kana">はなします</span> <span class="traducao">Conversar</span></li>
+					<li>話そう <span class="kana">話そう</span> <span class="traducao">Vamos conversar</span></li>
+				</ul>
+			</aside>
+			<h3>Grupo 2</h3>
+			<p>Como sempre, o grupo mais simples! Apenas retire o ます e acrescente よう</p>
+			<aside class="example">
+				<h3>Exemplos</h3>
+				<ul>
+					<li>食べます <span class="kana">たべます</span> <span class="traducao">Comer</span></li>
+					<li>食べよう <span class="kana">たべよう</span> <span class="traducao">Vamos comer</span></li>
+				</ul>
+				<ul>
+					<li>寝ます <span class="kana">ねます</span> <span class="traducao">Dormir</span></li>
+					<li>寝よう <span class="kana">ねよう</span> <span class="traducao">Vamos dormir</span></li>
+				</ul>
+				<ul>
+					<li>見ます <span class="kana">みます</span> <span class="traducao">Ver</span></li>
+					<li>見よう <span class="kana">みよう</span> <span class="traducao">Vamos ver</span></li>
+				</ul>
+			</aside>
+			<h3>Grupo 3</h3>
+			<p>します se torna しよう e 来ます se torna 来よう（こよう）</p>
+
+			<h2 id="joukenform">Forma Condicional <li style="display: inline;">条件形 <span class="kana">じょうけんけい ou じょうけんかたち</span></li></h2>
+			<p>Esta conjugação verbal trata de condições, SE algo acontecer. Esta conjugação verbal é usada por várias formas gramaticais</p>
+			<h3>Grupo 1</h3>
+			<p>Nesse grupo trocamos o som que antecede o ます de i por e acrescentamos ば</p>
+			<aside class="example">
+				<h3>Exemplos</h3>
+				<ul>
+					<li>行きます <span class="kana">いきます</span> <span class="traducao">Ir</span></li>
+					<li>行けば <span class="kana">いけば</span> <span class="traducao">Se for</span></li>
+				</ul>
+				<ul>
+					<li>読みます <span class="kana">よみます</span> <span class="traducao">Ler</span></li>
+					<li>読めば <span class="kana">よめば</span> <span class="traducao"></span>Se ler</li>
+				</ul>
+				<ul>
+					<li>遊びます <span class="kana">あそびます</span> <span class="traducao">Brincar</span></li>
+					<li>遊べば <span class="kana">あそべば</span> <span class="traducao">Se brincar</span></li>
+				</ul>
+				<ul>
+					<li>買います <span class="kana">かいます</span> <span class="traducao">Comprar</span></li>
+					<li>買えば <span class="kana">かえば</span> <span class="traducao">Se comprar</span></li>
+				</ul>
+				<ul>
+					<li>話します <span class="kana">はなします</span> <span class="traducao">Conversar</span></li>
+					<li>話せば <span class="kana">はなせば</span> <span class="traducao">Se conversar</span></li>
+				</ul>
+			</aside>
+			<h3>Grupo 2</h3>
+			<p>Para o grupo 2, apenas retire o ます e acrescente れば</p>
+			<aside class="example">
+				<h3>Exemplos</h3>
+				<ul>
+					<li>食べます <span class="kana">たべます</span> <span class="traducao">Comer</span></li>
+					<li>食べれば <span class="kana">たべれば</span> <span class="traducao">Se comer</span></li>
+				</ul>
+				<ul>
+					<li>寝ます <span class="kana">ねます</span> <span class="traducao">Dormir</span></li>
+					<li>寝れば <span class="kana">ねれば</span> <span class="traducao">Se dormir</span></li>
+				</ul>
+				<ul>
+					<li>見ます <span class="kana">みます</span> <span class="traducao">Ver</span></li>
+					<li>見れば <span class="kana">みれば</span> <span class="traducao">Se ver</span></li>
+				</ul>
+			</aside>
+			<h3>Grupo 3</h3>
+			<p>No grupo 3, します se torna すれば e 来ます se torna くれば</p>
+
 			<h2 id="ましょうform">Forma ~ましょう</h2>
-			<p>Para montar essa forma, basta remover o す da forma ます e acrescentar しょう</p>
+			<p>Conjugação <a href="#ikouform">volitiva</a> formal. Para montar essa forma, basta remover o す da forma ます e acrescentar しょう</p>
 			<aside class="example">
 				<ul class="first">
 					<li>行きます <span class="kana">いきます</span> <span class="traducao">Ir</span></li>
@@ -764,6 +912,7 @@
 			<h2 id="ませんかform">Forma ~ませんか</h2>
 			<p>Para montar essa forma, basta remover o す da forma ます e acrescentar せんか</p>
 			<p>Essa forma é usada para se fazer um convite para alguma coisa.</p>
+
 			<h2 id="たいform">Forma ~たい</h2>
 			<p>Para montar essa forma, basta remover o ます da forma ます e acrescentar たい</p>
 			<aside class="example">
