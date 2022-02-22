@@ -225,10 +225,10 @@
 
 	<div class="topic">
 		<h1>Função de transição estendida</h1>
-		<p><span class="def">Definição:</span> Seja M = (Q, Σ, δ, q<sub>0</sub>, F) um AFD. A <span class="destaque"> Função de transição estendida</span> de M é a função (gamma): Q x Σ* &#8594; Q definida da seguinte forma: para q ∈ Q e ω ∈ Σ*,</p>
+		<p><span class="def">Definição:</span> Seja M = (Q, Σ, δ, q<sub>0</sub>, F) um AFD. A <span class="destaque"> Função de transição estendida</span> de M é a função δ^: Q x Σ* &#8594; Q definida da seguinte forma: para q ∈ Q e ω ∈ Σ*,</p>
 		<table>
 			<tr>
-				<td rowspan="2">(gamma)(q,ω) =</td>
+				<td rowspan="2">δ^(q,ω) =</td>
 				<td>q</td>
 				<td>se ω = ε</td>
 			</tr>
@@ -237,7 +237,7 @@
 				<td>se ω = αx, com x ∈ Σ e α ∈ Σ*</td>
 			</tr>
 		</table>
-		<p>Ou seja, (gamma)(q,ω) é o estado ativo em M após computar toda uma cadeia ω a partir do estado q.</p>
+		<p>Ou seja, δ^(q,ω) é o estado ativo em M após computar toda uma cadeia ω a partir do estado q.</p>
 	</div>
 
 	<div class="topic">
@@ -257,15 +257,78 @@
 		<h1>A linguagem de um AFD</h1>
 		<p><span class="def">Definição:</span> Seja M = (Q, Σ, δ, q<sub>0</sub>, F) um AFD. Dizemos que X = {ω ∈ Σ* : M aceita ω} é <span class="destaque">a linguagem reconhecida por M</span>, ou simplesmente <span class="destaque">a linguagem de M</span>. <br>
 		Também dizemos que <span class="destaque">M reconhece X</span>. <br>
-		Denostamos tal linguagem por L(M).</p>
+		Denotamos tal linguagem por L(M).</p>
+
+		<div class="att">
+			<h1><u>Importante</u></h1>
+			<p>
+				um AFD <span class="destaque">aceita</span> cadeias (0 ou mais). <br>
+				Ele <span class="destaque">reconhece</span> uma única linguagem.
+			</p>
+		</div>
 	</div>
 
-	<div class="att">
-		<h1><u>Importante</u></h1>
-		<p>
-			um AFD <span class="destaque">aceita</span> cadeias (0 ou mais). <br>
-			Ele <span class="destaque">reconhece</span> uma única linguagem.
-		</p>
+	<div class="topic">
+		<h1>Automato Finito não Determinístico</h1>
+		<p><span class="def">Definição:</span> um <span class="destaque">automato finito não determinístico (AFN)</span> é uma 5-upla (Q, Σ, δ, q<sub>0</sub>, F) em que:</p>
+		<ul>
+			<li>Q é um conjuto finito de <span class="destaque">estados</span></li>
+			<li>Σ é um alfabeto</li>
+			<li>δ: Q x (Σ U {ε}) &#8594; P(Q) é uma <span class="destaque">função de transição</span></li>
+			<li>q<sub>0</sub> é o <span class="destaque">estado inicial</span></li>
+			<li>F ⊆ Q é o conjunto de <span class="destaque">estados finais</span></li>
+		</ul>
+	</div>
+
+	<div class="topic">
+		<h1>ε - fechamento</h1>
+		<p><span class="def">Definição:</span> Seja N = (Q, Σ, δ, q<sub>0</sub>, F) um AFN. Para q ∈ Q, o <span class="destaque">ε-fechamento de q</span>, denotado E(q), é o conjunto de estados tal que :</p>
+		<ul>
+			<li>q ∈ E(q)</li>
+			<li>se r ∈ E(q) e s ∈ δ(r,ε), então s ∈ E(q).</li>
+		</ul>
+		<p>Ou seja: E(q) é o conjunto de estados alcançáveis a partir de q seguindo 0 ou mais transições com rótulo ε.</p>
+		<p>E(q) é o conjunto de estados que ficam ativos no instante que q fica ativo.</p>
+	</div>
+
+	<div class="topic">
+		<h1>Função de transição estendida</h1>
+		<p><span class="def">Definição:</span> Seja N = (Q, Σ, δ, q<sub>0</sub>, F) um AFN. A <span class="destaque">função de transição estendida</span> de N é a função δ^: Q x Σ* &#8594; P(Q) definida de seguinte forma: para q ∈ Q e ω ∈ Σ*,</p>
+		<table>
+			<tr>
+				<td rowspan="2">δ^(q,ω) =</td>
+				<td>E(q)</td>
+				<td>se ω = ε</td>
+			</tr>
+			<tr>
+				<td>E(δ(δ^(q,α), x))</td>
+				<td>se ω = αx, com x ∈ Σ e α ∈ Σ*</td>
+			</tr>
+		</table>
+		<p>Ou seja, δ^(q,ω) é o conjunto de estados ativos em N após computar toda uma cadeia ω a partir do estado q.</p>
+	</div>
+
+	<div class="topic">
+		<h1>Aceite em um AFN</h1>
+		<p><span class="def">Definição:</span> Seja N = (Q, Σ, δ, q<sub>0</sub>, F) um AFN e seja ω ∈ Σ*. Dizemos que <span class="destaque">N aceita ω se δ^(q<sub>0</sub>,ω) ∩ F ≠ ∅. Caso contrário, <span class="destaque">N rejeita ω</span></span></p>
+	</div>
+
+	<div class="topic">
+		<h1>Aceite em um AFN - Definição Alternativa</h1>
+		<p><span class="def">Definição:</span> Seja N = (Q, Σ, δ, q<sub>0</sub>, F) um AFN e seja ω = ω<sub>1</sub>ω<sub>2</sub>...ω<sub>n</sub> uma cadeia sobre Σ (ω ∈ Σ*)<br>
+		Dizemos que <span class="destaque">N aceita ω</span> se podemos escrever ω = x<sub>1</sub>x<sub>2</sub>...x<sub>n</sub>, com cada x<sub>i</sub> ∈ Σ U {ε} e existe uma sequência de estados (r<sub>0</sub>r<sub>1</sub>...r<sub>n</sub> tal que</p>
+		<ul>
+			<li>r<sub>0</sub> = q<sub>0</sub></li>
+			<li>r<sub>i + 1</sub> ∈ δ(r<sub>i</sub>,α<sub>i + 1</sub>       para qualquer i = 0,...,m-1</li>
+			<li>r<sub>m</sub> ∈ F</li>
+		</ul>
+	</div>
+
+	<div class="topic">
+		<h1>A linguagem de um AFN</h1>
+		<p><span class="def">Definição:</span> Seja N = (Q, Σ, δ, q<sub>0</sub>, F) um AFN. Dizemos que X = {ω ∈ Σ* : N aceita ω} é <span class="destaque">a linguagem reconhecida por N</span>, ou simplesmente <span class="destaque">a linguagem de N</span>. <br>
+		Também dizemos que <span class="destaque">N reconhece X</span>. <br>
+		Denotamos tal linguagem por L(N).</p>
 	</div>
 </body>
 </html>
