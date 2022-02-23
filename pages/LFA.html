@@ -330,5 +330,20 @@
 		Também dizemos que <span class="destaque">N reconhece X</span>. <br>
 		Denotamos tal linguagem por L(N).</p>
 	</div>
+
+	<div class="topic">
+		<h1>Expressões Regulares</h1>
+		<p><span class="def">Definição:</span> R é uma <span class="destaque">expressão regular</span> sobre um alfabeto Σ que descreve a linguagem L(R) se</p>
+		<ol>
+			<li>R = <strong>x</strong> para algum x ∈ Σ. Nesse caso, L(R) = {x}</li>
+			<li>R = <strong>ε</strong>. Nesse caso, L(R) = {ε}</li>
+			<li>R = <strong>∅</strong>. Nesse caso, L(R) = ∅</li>
+			<p>E sendo R<sub>1</sub> e R<sub>2</sub> duas expressões regulares,</p>
+			<li>R = R<sub>1</sub> U R<sub>2</sub>. Nesse caso, L(R) = L(R<sub>1</sub>) U L(R<sub>2</sub>)</li>
+			<li>R = R<sub>1</sub>R<sub>2</sub>. Nesse caso, L(R) = L(R<sub>1</sub>)L(R<sub>2</sub>)</li>
+			<li>R = R<sub>1</sub>*. Nesse caso, L(R) = L(R<sub>1</sub>)*</li>
+		</ol>
+		<p>É possível agrupar operadores usando parênteses (se R = (R'), então L(R) = L(R'))</p>
+	</div>
 </body>
 </html>
