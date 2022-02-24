@@ -16,6 +16,11 @@
 
 		}
 
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+
 		body {
 			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 			/*background-color: var(--analogo2);*/
@@ -36,6 +41,31 @@
 		ul#navul {
 			list-style: none;
 			line-height: 1em;
+		}
+
+		div.dropdownbutton {
+			position: fixed;
+			float: left;
+			left: 0px;
+			top: 0px;
+			max-width: fit-content;
+			padding: 5px 15px;
+			border: 1px solid black;
+		}
+
+		div.dropdowncontent {
+			display: none;
+			position: absolute;
+			left: 0%;
+			top: calc(100% + 1px);
+			padding: 20px;
+			min-width: 350px;
+			overflow: auto;
+			outline: 1px solid black;
+		}
+
+		div.dropdownbutton:hover .dropdowncontent {
+			display: block;
 		}
 
 		div.topic {
@@ -96,7 +126,7 @@
 			padding: 15px;
 		}
 
-		p {
+		.topic p {
 			padding: 15px;
 			text-indent: 1em;
 		}
@@ -131,6 +161,15 @@
 <body>
 	<h1>Pontos Chave de Linguagens Formais e Automatas</h1>
 
+	<div class="dropdownbutton">
+		<p>Índice</p>
+		<div class="dropdowncontent">
+			<ul>
+
+			</ul>
+		</div>
+	</div>
+
 	<div class="topic">
 		<h1>To-do</h1>
 		<ul>
@@ -140,16 +179,7 @@
 	</div>
 
 	<div class="topic">
-		<h1>Índice</h1>
-		<nav>
-			<ul id="navul">
-				<li><a href="#alfabeto">Alfabetos e Cadeias</a></li>
-			</ul>
-		</nav>
-	</div>
-
-	<div class="topic" id="alfabeto">
-		<h1>Alfabetos e cadeias</h1>
+		<h1 id="alfabeto">Alfabetos e cadeias</h1>
 		<p>Um <span class="destaque">alfabeto</span> é um conjunto finito de elementos chamados <span class="destaque">símbolos</span> geralmente representados por letras gregas maíusculas. <br>
 		Exemplos: Σ = {0,1}, Σ<sub>1</sub> = {a,b, ... , z} , Σ<sub>2</sub> = {a,b}, Γ = {#. a1. bd}</p>
 		
@@ -175,7 +205,7 @@
 	</div>
 
 	<div class="topic">
-		<h1>Concatenação de cadeias</h1>
+		<h1 id="cadeiaconc">Concatenação de cadeias</h1>
 		<p>A <span class="destaque">concatenação</span> de uma cadeia α = α<sub>1</sub>α<sub>2</sub>...α<sub>n</sub> com uma cadeia β = β<sub>1</sub>β<sub>2</sub>...β<sub>m</sub> é a cadeia αβ = α<sub>1</sub>α<sub>2</sub>...α<sub>n</sub>β<sub>1</sub>β<sub>2</sub>...β<sub>m</sub> <br>
 		Denotamos por α<sup>k</sup> a concatenação de α com ela mesma k vezes.</p>
 
@@ -187,18 +217,18 @@
 	</div>
 
 	<div class="topic">
-		<h1>Subcadeias</h1>
+		<h1 id="subcadeia">Subcadeias</h1>
 		<p>Uma cadeia β é <span class="destaque">subcadeia</span> de outra cadeia ω se existem cadeia α e γ tais que ω = αβγ</p>
 	</div>
 
 	<div class="topic">
-		<h1>Potência de alfabeto</h1>
+		<h1 id="alfabetopot">Potência de alfabeto</h1>
 		<p>Dados um alfabeto Σ, denotamos por Σ<sup>k</sup> o conjunto de todas as cadeias de comprimento k sobre Σ. <br>
 		Obs: |Σ<sup>k</sup>| = |Σ|<sup>k</sup></p>
 	</div>
 
 	<div class="topic">
-		<h1>Fecho de Kleene e fecho positivo de alfabetos</h1>
+		<h1 id="fechokleene">Fecho de Kleene e fecho positivo de alfabetos</h1>
 		<p>fecho de Kleene de Σ, denotado por Σ*, é o conjunto de todas as cadeias sobre Σ, isto é, <span style="display: block;">Σ* = Σ<sup>0</sup> U Σ<sup>1</sup> Σ<sup>2</sup> U ... = (somatorio)</span></p>
 		<p>O <span class="destaque">fecho positivo</span> de Σ, denotado por Σ<sup>+</sup>, é conjunto de toas as cadeias não vazias sobre Σ</p>
 
@@ -206,13 +236,13 @@
 	</div>
 
 	<div class="topic">
-		<h1>Linguagem</h1>
+		<h1 id="linguagem">Linguagem</h1>
 		<p>Uma <span class="destaque">linguagem</span> sobre um alfabeto Σ é um subconjunto de Σ*. Geralmente representadas por letras maiúsculas. Assim, "L é uma linguagem sobre Σ* equivale a "L ⊆ Σ*"</p>
 
 	</div>
 
 	<div class="topic">
-		<h1>Automato Finito Determinístico</h1>
+		<h1 id="afd">Automato Finito Determinístico</h1>
 		<p><span class="def">Definição:</span> Um autômato finito determinístico (AFD) é uma 5-upla (Q, Σ, δ, q<sub>0</sub>, F) em que:</p>
 		<ul>
 			<li>Q é um conjuto finito de <span class="destaque">estados</span></li>
@@ -224,7 +254,7 @@
 	</div>
 
 	<div class="topic">
-		<h1>Função de transição estendida</h1>
+		<h1 id="tranfuncex">Função de transição estendida</h1>
 		<p><span class="def">Definição:</span> Seja M = (Q, Σ, δ, q<sub>0</sub>, F) um AFD. A <span class="destaque"> Função de transição estendida</span> de M é a função δ^: Q x Σ* &#8594; Q definida da seguinte forma: para q ∈ Q e ω ∈ Σ*,</p>
 		<table>
 			<tr>
@@ -241,7 +271,7 @@
 	</div>
 
 	<div class="topic">
-		<h1>Aceite de um AFD</h1>
+		<h1 id="afdaceite">Aceite de um AFD</h1>
 		<p><span class="def">Definição:</span> Seja M = (Q, Σ, δ, q<sub>0</sub>, F) um AFD e seja ω ∈ Σ*. Dizemos que <span class="destaque">M aceita ω</span> se gamma(q<sub>0</sub>,ω) ∈ F. Caso contrário, <span class="destaque">M rejeita ω</span></p>	
 		
 		<p><span class="def">Definição alternativa:</span> Seja M = (Q, Σ, δ, q<sub>0</sub>, F) um AFD e seja ω = ω<sub>1</sub>ω<sub>2</sub>...ω<sub>n</sub> uma cadeia sobre Σ (ω ∈ Σ*). <br>
@@ -254,7 +284,7 @@
 	</div>
 
 	<div class="topic">
-		<h1>A linguagem de um AFD</h1>
+		<h1 id="afdlinguagem">A linguagem de um AFD</h1>
 		<p><span class="def">Definição:</span> Seja M = (Q, Σ, δ, q<sub>0</sub>, F) um AFD. Dizemos que X = {ω ∈ Σ* : M aceita ω} é <span class="destaque">a linguagem reconhecida por M</span>, ou simplesmente <span class="destaque">a linguagem de M</span>. <br>
 		Também dizemos que <span class="destaque">M reconhece X</span>. <br>
 		Denotamos tal linguagem por L(M).</p>
@@ -269,7 +299,7 @@
 	</div>
 
 	<div class="topic">
-		<h1>Automato Finito não Determinístico</h1>
+		<h1 id="afn">Automato Finito não Determinístico</h1>
 		<p><span class="def">Definição:</span> um <span class="destaque">automato finito não determinístico (AFN)</span> é uma 5-upla (Q, Σ, δ, q<sub>0</sub>, F) em que:</p>
 		<ul>
 			<li>Q é um conjuto finito de <span class="destaque">estados</span></li>
@@ -281,7 +311,7 @@
 	</div>
 
 	<div class="topic">
-		<h1>ε - fechamento</h1>
+		<h1 id="fechamento">ε - fechamento</h1>
 		<p><span class="def">Definição:</span> Seja N = (Q, Σ, δ, q<sub>0</sub>, F) um AFN. Para q ∈ Q, o <span class="destaque">ε-fechamento de q</span>, denotado E(q), é o conjunto de estados tal que :</p>
 		<ul>
 			<li>q ∈ E(q)</li>
@@ -292,7 +322,7 @@
 	</div>
 
 	<div class="topic">
-		<h1>Função de transição estendida</h1>
+		<h1 id="functransexafn">Função de transição estendida</h1>
 		<p><span class="def">Definição:</span> Seja N = (Q, Σ, δ, q<sub>0</sub>, F) um AFN. A <span class="destaque">função de transição estendida</span> de N é a função δ^: Q x Σ* &#8594; P(Q) definida de seguinte forma: para q ∈ Q e ω ∈ Σ*,</p>
 		<table>
 			<tr>
@@ -309,12 +339,12 @@
 	</div>
 
 	<div class="topic">
-		<h1>Aceite em um AFN</h1>
+		<h1 id="afnaceite">Aceite em um AFN</h1>
 		<p><span class="def">Definição:</span> Seja N = (Q, Σ, δ, q<sub>0</sub>, F) um AFN e seja ω ∈ Σ*. Dizemos que <span class="destaque">N aceita ω se δ^(q<sub>0</sub>,ω) ∩ F ≠ ∅. Caso contrário, <span class="destaque">N rejeita ω</span></span></p>
 	</div>
 
 	<div class="topic">
-		<h1>Aceite em um AFN - Definição Alternativa</h1>
+		<h1 id="afnaceitealt">Aceite em um AFN - Definição Alternativa</h1>
 		<p><span class="def">Definição:</span> Seja N = (Q, Σ, δ, q<sub>0</sub>, F) um AFN e seja ω = ω<sub>1</sub>ω<sub>2</sub>...ω<sub>n</sub> uma cadeia sobre Σ (ω ∈ Σ*)<br>
 		Dizemos que <span class="destaque">N aceita ω</span> se podemos escrever ω = x<sub>1</sub>x<sub>2</sub>...x<sub>n</sub>, com cada x<sub>i</sub> ∈ Σ U {ε} e existe uma sequência de estados (r<sub>0</sub>r<sub>1</sub>...r<sub>n</sub> tal que</p>
 		<ul>
@@ -325,14 +355,14 @@
 	</div>
 
 	<div class="topic">
-		<h1>A linguagem de um AFN</h1>
+		<h1 id="afnlinguagem">A linguagem de um AFN</h1>
 		<p><span class="def">Definição:</span> Seja N = (Q, Σ, δ, q<sub>0</sub>, F) um AFN. Dizemos que X = {ω ∈ Σ* : N aceita ω} é <span class="destaque">a linguagem reconhecida por N</span>, ou simplesmente <span class="destaque">a linguagem de N</span>. <br>
 		Também dizemos que <span class="destaque">N reconhece X</span>. <br>
 		Denotamos tal linguagem por L(N).</p>
 	</div>
 
 	<div class="topic">
-		<h1>Expressões Regulares</h1>
+		<h1 id="regex">Expressões Regulares</h1>
 		<p><span class="def">Definição:</span> R é uma <span class="destaque">expressão regular</span> sobre um alfabeto Σ que descreve a linguagem L(R) se</p>
 		<ol>
 			<li>R = <strong>x</strong> para algum x ∈ Σ. Nesse caso, L(R) = {x}</li>
@@ -345,5 +375,24 @@
 		</ol>
 		<p>É possível agrupar operadores usando parênteses (se R = (R'), então L(R) = L(R'))</p>
 	</div>
+
+	<script>
+		var topics = document.querySelectorAll('div.topic') //get all topic
+		var indexul = document.querySelector('div.dropdowncontent').getElementsByTagName('ul')[0] //get the ul where the index will be
+
+		for (i = 0; i < topics.length; i++) {
+			var h1 = topics[i].getElementsByTagName('h1')[0]
+			indexul.innerHTML += '<li><a href="#'+ h1.id + '">' + h1.innerText + '</a></li>\n'
+			
+			var h2array = topics[i].querySelectorAll('h2')
+			if (h2array != null) {
+				indexul.innerHTML += '<ul id="ul' + i + '"></ul>'
+				var insideul = indexul.querySelector('ul#ul' + i)
+				for (j = 0; j < h2array.length; j++) {
+					insideul.innerHTML += '<li><a href="#'+ h2array[j].id + '">' + h2array[j].innerText + '</a></li>\n'
+				}
+			}
+		}
+	</script>
 </body>
 </html>
