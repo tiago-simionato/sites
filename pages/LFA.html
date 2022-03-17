@@ -143,6 +143,12 @@
 			text-indent: 1.3em;
 		}
 
+		.topic ol {
+			list-style-type: decimal;
+			list-style-position: inside;
+			padding-left: 30px;
+		}
+
 		ul.inside {
 			padding: 0px 25px;
 		}
@@ -374,6 +380,71 @@
 			<li>R = R<sub>1</sub>*. Nesse caso, L(R) = L(R<sub>1</sub>)*</li>
 		</ol>
 		<p>É possível agrupar operadores usando parênteses (se R = (R'), então L(R) = L(R'))</p>
+		<p><span class="def">Lema:</span> A linguagem descrita por uma expressão regluar é regular</p>
+	</div>
+
+	<div class="topic">
+		<h1 id="gramatica">Gramaticas</h1>
+		<p>São dispositivos geradores que se aproveitam de recursão</p>
+		<p>Os símbolos do alfabeto das cadeias da linguagem são chamados <span class="destaque">terminais</span></p>
+		<p>Existe um outro alfabeto, cujos símbolos são chamados de <span class="destaque">variáveis</span></p>
+		<p>Cada variável representa uma linguagem <ul><li>A <span class="destaque">variável inicial</span> representa a linguagem "principal"</li></ul></p>
+		<p>Existe um conjunto finito de <span class="destaque">regras de substituição:</span> <ul><li>especificam combinações válidas de símbolos</li> <li>um regra <span class="destaque">α -> β</span> indica que α pode ser substituído por β sendo que α e β são cadeias de variáveis e terminais.</li></ul></p>
+		<p>Geramos cadeias de terminais por meio de uma sequência de substituições a partir da variável inicial</p>
+		<p>Existem vários tipos de gramáticas:</p>
+		<ul>
+			<li>Lineares</li>
+			<li>Livres de contexto</li>
+			<li>Sensíveis ao contexto</li>
+			<li>Irrestritas</li>
+		</ul>
+	</div>
+
+	<div class="topic">
+		<h1 id="glc">Gramáticas livres de Contexto</h1>
+
+		<p><span class="def">Definição:</span> Uma <span class="destaque">gramática livre de contexto (GLC)</span> é uma 4-upla (V, Σ, R, S) onde</p>
+		<ul>
+			<li>V é um conjunto finito de <span class="destaque">variáveis</span></li>
+			<li>Σ é um conjunto finito de <span class="destaque">terminais</span>, com V ∩ Σ = ∅</li>
+			<li>R é um conjunto finito de <span class="destaque">regras de substituição</span> na forma X -> α, onde X ∈ V e α ∈ (Σ U V)*</li>
+			<li>S é a <span class="destaque">variável inicial</span></li>
+		</ul>
+
+		<h2 id="subrules">Usando as regras de substituição</h2>
+		<p><span class="def">Definição:</span> Se α, β e ω são cadeias de variáveis e terminais e A -> ω é uma regra de substituição, então dizemos que "αAβ <span class="destaque">origina</span> αωβ" e escrevemos <span class="destaque">αAβ -> αωβ</span></p>
+	</div>
+
+	<div class="topic">
+		<h1 id="derivacoes">Derivações</h1>
+		<p><span class="def">Definição:</span> Sejam α e β cadeuas de variáveis e terminais. Dizemos que <span class="destaque">α deriva β</span>, denotado <span class="destaque">α *=>β</span>, se</p>
+		<ol>
+			<li>α=β, ou</li>
+			<li>existem cadeias de var. e term. γ<sub>1</sub>,γ<sub>2</sub>,...,γ<sub>k</sub>, k >= 0, tais que α -> γ<sub>1</sub> -> γ<sub>2</sub> -> ... -> γ<sub>k</sub> -> β</li>
+		</ol>
+	</div>
+
+	<div class="topic">
+		<h1 id="parsetrees">Árvores sintáticas (Parse trees)</h1>
+		<p>Uma derivação pode ser representada por uma <span class="destaque">árvore sintática</span></p>
+		<ul>
+			<li>Cada nó interno é uma variável</li>
+			<li>Cada folha é uma variável, um terminal ou ε</li>
+			<li>Se um nó interno tem rótulo A e seus filhos são, da esquerda para a direita, X<sub>1</sub>, X<sub>2</sub>, ..., X<sub>k</sub>, então A -> X<sub>1</sub>X<sub>2</sub>...X<sub>k</sub> é uma regra de produção da gramática</li>
+		</ul>
+	</div>
+
+	<div class="topic">
+		<h1 id="linggram">Linguagem de uma gramática</h1>
+		<p><span class="def">Definição:</span> Seja G uma gramática cuja variável inicial é S e o conjunto de terminais é Σ. <br>
+		A <span class="destaque">linguagem de G</span>, denotada por L(G) é o conjunto {ω ∈ Σ*: S *+> ω}</p>
+	</div>
+
+	<div class="topic">
+		<h1 id="llc">Linguagens Livres de Contexto</h1>
+		<p><span class="def">Definição:</span> Uma linguagem é livre de contexto se alguma gramática livre de contexto a gera</p>
+
+		<p><span class="def">Teorema:</span> Toda linguagem regular é livre de contexto</p>
 	</div>
 
 	<script>
