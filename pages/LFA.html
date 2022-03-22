@@ -165,6 +165,20 @@
 	</style>
 </head>
 <body>
+	<!--SYMBOLS QUICK REFERENCE
+	gamma:        Γ
+	little gamma: γ
+	:             Σ
+	omega:        ω
+	alpha:        α
+	beta:         β
+	:             δ
+	empty:        ∅
+	pertence      ∈
+	:             ε
+	turnsytle     ⊢ (ou catraca)
+	small lambda: λ
+	-->
 	<h1>Pontos Chave de Linguagens Formais e Automatas</h1>
 
 	<div class="dropdownbutton">
@@ -445,6 +459,49 @@
 		<p><span class="def">Definição:</span> Uma linguagem é livre de contexto se alguma gramática livre de contexto a gera</p>
 
 		<p><span class="def">Teorema:</span> Toda linguagem regular é livre de contexto</p>
+	</div>
+
+	<div class="topic">
+		<h1 id="ap">Automatos com Pilha</h1>
+		<p><span class="def">Definição:</span>Um <span class="destauqe">autômato com pilha (AP)</span>é uma 6-upla (Q, Σ, Γ, δ, q<sub>0</sub>, F) em que</p>
+		<ul>
+			<li>Q é um conjunto finito de <span class="destaque">estados</span></li>
+			<li>Σ é o <span class="destaque">alfabeto de entrada</span></li>
+			<li>Γ é o <span class="destaque">alfabeto da pilha</span></li>
+			<li>δ : Q x (Σ U {ε}) x (Γ U {ε}) -> P(Q x (Γ U {ε})) é a <span class="destaque">função de transição</span></li>
+			<li>q<sub>0</sub> é o <span class="destaque">estado inicial</span></li>
+			<li>F ⊆ Q é o conjunto de <span class="destauqe">estados finais</span></li>
+		</ul>
+	</div>
+
+	<div class="topic">
+		<h1 id="di">Descrição Instantânea</h1>
+		<p><span class="def">Definição:</span> A <span class="destaque">descrição instantânea</span> de um Ap P=(Q, Σ, Γ, δ, q<sub>0</sub>, F) é dada pela tripla <span class="destaque">(q, ω, γ)</span> em que</p>
+		<ul>
+			<li>q é um estado</li>
+			<li>ω ∈ Σ* é a entrada restante</li>
+			<li>γ ∈ Γ* é o conteúdo da pilha (com o topo à direita)</li>
+		</ul>
+	</div>
+
+	<div class="topic">
+		<h1 id="apaceite">Aceite e reconecimento em AP</h1>
+		<p><span class="def">Definição:</span> Dado um AP P = (Q, Σ, Γ, δ, q<sub>0</sub>, F) e uma cadeia ω ∈ Σ*, dizemos que <span class="destaque">P aceita ω</span> se <br> (q<sub>0</sub>, ω, ε) ⊢* (q, ε, γ) <br>
+		sendo q ∈ F e γ ∈ Γ*.</p>
+		<p>A linguagem Z = {ω ∈ Σ*: P aceita ω} é a <span class="destaque">linguagem reconhecida por P</span> ou a <span class="destaque">linguagem de P</span>, e escrevemos L(P) = X.</p>
+
+		<h2>Definição alternativa de aceite</h2>
+		<p><span class="def">Definição:</span> Dado um AP P = (Q, Σ, Γ, δ, q<sub>0</sub>, F) e uma cadeia ω ∈ Σ*, dizemos que <span class="destaque">P aceita ω</span> se ω pode ser escrita como x<sub>1</sub>x<sub>2</sub>...x<sub>m</sub>, com cada x<sub>i</sub> ∈ Σ U {ε} e se existem sequências ( r<sub>0</sub>r<sub>1</sub>...r<sub>m</sub> de estados e  (γ<sub>0</sub>γ<sub>1</sub>...γ<sub>m</sub>) de cadeias γ<sub>i</sub> ∈ Γ* tais que</p>
+		<ul>
+			<li>r<sub>0</sub> = q<sub>0</sub></li>
+			<li>r<sub>m</sub> ∈ F</li>
+			<li>(r<sub>i+1</sub>, Y) ∈ δ(r<sub>i</sub>, x<sub>i+1</sub>, X) para qualquer 0 <= i < m, com γ<sub>i</sub> = Xλ e γ<sub>i+1</sub> = Yλ sendo λ ∈ Γ*</li>
+		</ul>
+	</div>
+
+	<div class="topic">
+		<h1 id="apglc">Ap e lingugens livres de contexto</h1>
+		<p><span class="def">Teorema:</span> Uma linguagem é livre e contexto se e somente se algum autômato com pilha a reconhece.</p> 
 	</div>
 
 	<script>
